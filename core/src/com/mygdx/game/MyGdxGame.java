@@ -142,7 +142,8 @@ public class  MyGdxGame extends ApplicationAdapter {
 
 	void offScreen(){
 		if (x > 800) {
-			batch.draw(img, 0, 0, DRAW_WIDTH, DRAW_HEIGHT);
+			batch.draw(img, 0, 0, DRAW_WIDTH, DRAW_HEIGHT); // this is my best guess for how to make him reappear. I don't
+			//understand why it doesn't work.
 		}
 
 	}
