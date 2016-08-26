@@ -5,15 +5,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import java.lang.*;
-
-import com.badlogic.gdx.graphics.g3d.particles.influencers.RegionInfluencer;
-import com.badlogic.gdx.math.MathUtils;
 import javafx.animation.Animation;
-import javafx.animation.AnimationTimer;
 
 public class  MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -38,7 +32,7 @@ public class  MyGdxGame extends ApplicationAdapter {
 	static final int GRAVITY = -100;
 
 
-	@Override
+ 	@Override
 	public void create() {
 		batch = new SpriteBatch();
 
@@ -115,12 +109,11 @@ public class  MyGdxGame extends ApplicationAdapter {
 			yv = MAX_VELOCITY * -1;
 		}
 		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-			xv = MAX_VELOCITY;
-			faceRight = true;
+//			faceRight = true;
 		}
 		if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
 			xv = MAX_VELOCITY * -1;
-			faceRight = false;
+//			faceRight = false;
 
 		}
 		if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
@@ -142,7 +135,8 @@ public class  MyGdxGame extends ApplicationAdapter {
 
 	void offScreen(){
 		if (x > 800) {
-			batch.draw(img, 0, 0, DRAW_WIDTH, DRAW_HEIGHT); // this is my best guess for how to make him reappear. I don't
+			x = 0;
+//			batch.draw(img, 0, 0, DRAW_WIDTH, DRAW_HEIGHT); // this is my best guess for how to make him reappear. I don't
 			//understand why it doesn't work.
 		}
 
